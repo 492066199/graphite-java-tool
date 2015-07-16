@@ -15,12 +15,14 @@ import com.uve.graph.model.CommitMsg;
 import com.uve.graph.model.Msg;
 import com.uve.graph.output.IOutputTarget;
 import com.uve.graph.output.OutputTargetFactory;
+import com.uve.graph.util.TimeUtil;
 
 public abstract class FileHandle implements IGraphHandle{
 	public String filename;
 	public String id;  
 	public final GraphLaunch graphLaunch;
 	public File file;
+	public long lasttime;
 	public FileReader fr;
 	public BufferedReader br;
 	public int failCount = 0;
@@ -50,16 +52,23 @@ public abstract class FileHandle implements IGraphHandle{
 			e.printStackTrace();
 		}
 		br = new BufferedReader(fr);
+		lasttime = System.currentTimeMillis();
 	}
 	
 	public void readLog() {
 		try {
 			String tmp = br.readLine();
 			if(tmp == null){
-				if(failCount > 1000){
+				if(failCount > 10000){
 					failCount = 0;
 					if(file.length() > 1073741824L){
-						load();
+						if(tryLoadNewFile()){
+							load();
+						}
+					}else if(TimeUtil.isNotTheSameDay(System.currentTimeMillis())){ // not the same day
+						if(tryLoadNewFile()){
+							load();
+						}
 					}else {
 						return;
 					}
@@ -78,6 +87,16 @@ public abstract class FileHandle implements IGraphHandle{
 		}
 	}
 	
+	private boolean tryLoadNewFile() {
+		this.failCount = 0;
+		File tmp = new File(filename);
+		if(tmp.length() < file.length())
+			return true;
+		else {
+			return false;
+		}
+	}
+
 	public List<? extends IGraphHandle> setup(String[] strings,
 			GraphLaunch graphLaunch) {
 		List<IGraphHandle> handles = new LinkedList<IGraphHandle>();
