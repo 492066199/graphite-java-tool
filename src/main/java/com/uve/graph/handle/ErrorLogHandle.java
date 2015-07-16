@@ -13,7 +13,7 @@ import com.uve.graph.model.Msg;
 public class ErrorLogHandle extends FileHandle{
 	public final boolean FACTORY_SWITCH; 
 	private final SimpleDateFormat format = new SimpleDateFormat("yy/MM/dd HH:mm:ss");
-	private final int outputId = 0;
+	private final int outputId = 1;
 	
 	public ErrorLogHandle() {
 		FACTORY_SWITCH = true;

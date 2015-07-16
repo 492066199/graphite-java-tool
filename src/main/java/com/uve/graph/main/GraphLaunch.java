@@ -23,8 +23,8 @@ public class GraphLaunch implements Runnable{
 	public final TreeMap<Integer, IGraphHandle> treeMaps = new TreeMap<Integer, IGraphHandle>();
 	
 	public final ResultMsgOutput resultMsgOutput;
-	public final BlockingQueue<Msg>  msgQueue = new LinkedBlockingQueue<Msg>(3000);
-	public final BlockingQueue<CommitMsg> resultQueue = new LinkedBlockingQueue<CommitMsg>(2000);
+	public final BlockingQueue<Msg>  msgQueue = new LinkedBlockingQueue<Msg>(500);
+	public final BlockingQueue<CommitMsg> resultQueue = new LinkedBlockingQueue<CommitMsg>(500);
 	public int sumPriority = 0;
 	
 	public GraphLaunch(ResultMsgOutput resultMsgOutput) {

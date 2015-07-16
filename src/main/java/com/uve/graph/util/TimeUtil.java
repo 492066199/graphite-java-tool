@@ -8,7 +8,7 @@ public class TimeUtil {
 	public static boolean isNotTheSameDay(long last){
 		long count = (last - BASE) / DATE;
 		long count1 = (System.currentTimeMillis() - BASE) / DATE;
-		System.out.println(count + ":" + count1);
+        //System.out.println(count + ":" + count1);
 		return count != count1;
 	}
 }

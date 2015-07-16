@@ -15,7 +15,7 @@ public class AccessHandle extends FileHandle{
 	public final boolean FACTORY_SWITCH; 
 	private final Pattern pattern = Pattern.compile("([[0-9]|\\.]+)\\|([[0-9]|\\.]+)\\s-\\s-\\s\\[([\\w|\\d|/|:|\\s|\\+]+)\\]\\s\"[A-Z]+\\s([\\w|\\d|/]+)[\\?]{0,1}");
 	private final SimpleDateFormat format = new SimpleDateFormat("dd/MMMMM/yyyy:HH:mm:ss z", Locale.ENGLISH);;
-	private final int outputId = 0;
+	private final int outputId = 1;
 	
 	public AccessHandle(String config, GraphLaunch graphLaunch) {
 		super(config, graphLaunch);
@@ -46,7 +46,7 @@ public class AccessHandle extends FileHandle{
 			
 			target = target.replaceAll("/", ".");
 			target = "uve_monitor.access" + target;
-			super.statistics(ip, time, target, null);
+			super.statistics(ip, time / 1000, target, null);
 		}		
 	}
 
