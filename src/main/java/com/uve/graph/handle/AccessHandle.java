@@ -45,7 +45,7 @@ public class AccessHandle extends FileHandle{
 			}
 			
 			target = target.replaceAll("/", ".");
-			target = target.substring( 1, target.length() - 1);
+			target = "uve_monitor.access" + target;
 			super.statistics(ip, time, target, null);
 		}		
 	}

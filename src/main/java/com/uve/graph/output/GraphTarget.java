@@ -13,7 +13,7 @@ public class GraphTarget implements IOutputTarget {
 	
 	public void load() {
 		try {
-			this.socket = new Socket("221.179.193.178", 33336);
+			this.socket = new Socket("10.77.96.122", 2003);
 			this.pw = new PrintWriter(socket.getOutputStream());
 			needRetry = false;
 			retryCount = 0;
