@@ -61,7 +61,7 @@ public abstract class FileHandle implements IGraphHandle{
 			if(tmp == null){
 				if(failCount > 10000){
 					failCount = 0;
-					if(file.length() > 1073741824L){
+					if(file.length() > 1073700000L){
 						if(tryLoadNewFile()){
 							load();
 						}
@@ -77,7 +77,8 @@ public abstract class FileHandle implements IGraphHandle{
 				}
 				return;
 			}
-			
+		
+            failCount = 0;    
 			Msg msg = new Msg(this.id, tmp);
 			this.graphLaunch.msgQueue.put(msg);
 		} catch (IOException e) {
@@ -90,7 +91,7 @@ public abstract class FileHandle implements IGraphHandle{
 	private boolean tryLoadNewFile() {
 		this.failCount = 0;
 		File tmp = new File(filename);
-		if(tmp.length() < file.length())
+		if(tmp.length() < 1073700000L)
 			return true;
 		else {
 			return false;

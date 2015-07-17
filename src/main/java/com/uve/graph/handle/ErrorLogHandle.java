@@ -41,16 +41,17 @@ public class ErrorLogHandle extends FileHandle{
 		List<String> ps = Lists.newArrayList(Splitter.on(',').split(tmp));
 		for(String s : ps){
 			 if(s.indexOf('|') >= 0){
-				 String[] _s = s.split("\\|");
-				 ip = _s[0]; 
-				 String[] __s = _s[1].split(" ");
-				 String date = __s[0] + " " + __s[1];
-				 try {
-					time= format.parse(date).getTime() / 1000;
-				} catch (ParseException e) {
-					//result.setTime(System.currentTimeMillis());
-					e.printStackTrace();
-				}
+				 try{
+                        String[] _s = s.split("\\|");
+				        ip = _s[0]; 
+				        String[] __s = _s[1].split(" ");
+				        String date = __s[0] + " " + __s[1];
+					    time= format.parse(date).getTime() / 1000;
+    				} catch (Exception e) {
+				    	//result.setTime(System.currentTimeMillis());
+		    			e.printStackTrace();
+                        return;
+	    			}
 			 }
 			 
 			 if(s.indexOf("request: \"") >= 0 && s.indexOf("subrequest: \"") < 0){
