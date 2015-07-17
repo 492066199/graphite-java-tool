@@ -1,11 +1,17 @@
 package com.uve.graph.test;
 
+import java.io.File;
+import java.text.MessageFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import org.apache.log4j.Logger;
+
+import com.uve.graph.handle.FileHandle;
 
 public class Test1 {
 	public Test1(int x, int y) {
@@ -38,5 +44,18 @@ public class Test1 {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		String s = "api.uve.mobile.sina.cn_access_current";
+		String[] t = s.split("_");
+		System.out.println(t.length);
+		
+		//System.out.println(k1);
+		System.out.println("fafff".charAt(0));
+		
+		SimpleDateFormat format123 = new SimpleDateFormat("yyyy-MM-dd");
+		System.out.println(format123.format(new Date(System.currentTimeMillis())));
+		System.out.println(String.format("%05d", 99));
+		File s111 = new File("def");
+		System.out.println(s111.exists());
 	}
 }

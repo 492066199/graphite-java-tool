@@ -65,4 +65,9 @@ public class AccessHandle extends FileHandle{
 	public int getOutputId() {
 		return outputId;
 	}
+
+	@Override
+	public String getFilePrefix() {
+		return "api.uve.mobile.sina.cn_access";
+	}
 }

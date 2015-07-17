@@ -1,6 +1,5 @@
 package com.uve.graph.handle;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
@@ -85,11 +84,17 @@ public class ErrorLogHandle extends FileHandle{
 	}
 
 	public int getPriority() {
-		return 3;
+		return 7;
 	}
 
 
 	public int getOutputId() {
 		return outputId;
+	}
+
+
+	@Override
+	public String getFilePrefix() {
+		return "error";
 	}
 }

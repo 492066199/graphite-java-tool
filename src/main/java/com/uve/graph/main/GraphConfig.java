@@ -7,8 +7,8 @@ public class GraphConfig {
 	public static final Map<String, String[]> handleStr = new HashMap<String, String[]>();
 	
 	static{
-		handleStr.put("com.uve.graph.handle.ErrorLogHandle", new String[]{"/data0/scribe_log/api.uve.mobile.sina.cn/error/error_current"});
-		handleStr.put("com.uve.graph.handle.AccessHandle", new String[]{"/data0/scribe_log/api.uve.mobile.sina.cn/access/api.uve.mobile.sina.cn_access_current"});
+		handleStr.put("com.uve.graph.handle.ErrorLogHandle", new String[]{"/data0/scribe_log/api.uve.mobile.sina.cn/error"});
+		handleStr.put("com.uve.graph.handle.AccessHandle", new String[]{"/data0/scribe_log/api.uve.mobile.sina.cn/access"});
 	};
 	
 }
