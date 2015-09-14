@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphhanles>
+	<graphhandle id="1">
+		<in class="commonFileHandleIn">
+			<name>/Users/yangyang/Documents/access</name>
+			<priority>100</priority>
+		</in>
+		<handle class="accessFileHandle">
+			<stats index = "0">
+				<stat class="statCalcTotal"  prefix="uve_monitor.qps">1</stat>
+				<stat class="statCalcTotal"  prefix="uve_monitor.qps">3600</stat>
+				<stat class="statCalcAverTime"  prefix="uve_monitor.aver">1</stat>
+			</stats>
+		</handle>
+		<out class="commonHandleOut">0</out>
+		<count>10</count>
+	</graphhandle>
+	<graphhandle id="2">
+		<in class="delongTcpIn">
+			<name>127.0.0.1:33333</name>
+			<priority>100</priority>
+		</in>
+		<handle class="delongTcpHandle">
+			<stats index = "0">
+				<stat class="statDelongTotal">1</stat>
+				<stat class="statDelongAver">1</stat>
+			</stats>
+		</handle>
+		<out class="commonHandleOut">0</out>
+		<count>10</count>
+	</graphhandle>
+	<graphhandle id="2">
+		<in class="commonFileHandleIn">
+			<name>/Users/yangyang/Documents/error</name>
+			<priority>100</priority>
+		</in>
+		<handle class="errorFileHandle">
+			<stats index = "0">
+				<stat class="statCalcTotal"  prefix="uve_monitor.error">1</stat>
+			</stats>
+		</handle>
+		<out class="commonHandleOut">0</out>
+		<count>10</count>
+	</graphhandle>
+</graphhanles>
