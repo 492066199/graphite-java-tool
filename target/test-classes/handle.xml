@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<graphhanles>
-	<graphhandle id = "1">
-		<in class="com.wbuve.graph.handle.imp.AccessHandleIn">/Users/yangyang/Downloads/test</in>
-		<handle>com.wbuve.graph.handle.imp.AccessCommonHandle</handle>
-		<out>com.wbuve.graph.handle.imp.CommonHandleOut</out>
-	</graphhandle>
-</graphhanles>
