@@ -5,16 +5,14 @@ import java.util.List;
 import java.util.Locale;
 
 import org.apache.log4j.Logger;
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
 
 import com.google.common.base.Splitter;
 import com.google.common.collect.Lists;
+import com.wbuve.graph.annotation.Component;
 import com.wbuve.graph.handle.AbstractHandle;
 import com.wbuve.graph.model.CommitMsg;
 import com.wbuve.graph.model.Msg;
 
-@Scope("prototype")
 @Component("accessFileHandle")
 public class AccessFileHandle extends AbstractHandle{
 	private final SimpleDateFormat format = new SimpleDateFormat("dd/MMMMM/yyyy:HH:mm:ss z", Locale.ENGLISH);
@@ -44,7 +42,7 @@ public class AccessFileHandle extends AbstractHandle{
 				end = target.indexOf('?');
 			}
 			int phpc = target.indexOf(".php");
-			if (phpc >= 0) {
+			if (phpc >= 0 && phpc < end) {
 				end = phpc;
 			}
 			target = target.substring(start, end);

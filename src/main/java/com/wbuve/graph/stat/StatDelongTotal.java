@@ -2,12 +2,9 @@ package com.wbuve.graph.stat;
 
 import java.util.List;
 
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
-
+import com.wbuve.graph.annotation.Component;
 import com.wbuve.graph.model.CommitMsg;
 
-@Scope("prototype")
 @Component("statDelongTotal")
 public class StatDelongTotal extends AbstractStatCalc{
 	@Override

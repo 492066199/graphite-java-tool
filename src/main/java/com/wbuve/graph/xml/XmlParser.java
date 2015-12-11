@@ -3,12 +3,12 @@ package com.wbuve.graph.xml;
 import java.util.List;
 import java.util.concurrent.LinkedBlockingQueue;
 
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 import com.google.common.collect.Lists;
+import com.wbuve.graph.annotation.ComponentScanCtx;
 import com.wbuve.graph.handle.CombinationHandle;
 import com.wbuve.graph.handle.IHandle;
 import com.wbuve.graph.handle.IHandleIn;
@@ -26,9 +26,8 @@ public class XmlParser extends DefaultHandler{
 	private String preTag = null;
 	private IStatCalc curStat = null;
 	private StatListener curStats = null;
-	private final AnnotationConfigApplicationContext ctx;
-	
-	public XmlParser(AnnotationConfigApplicationContext ctx) {
+	private ComponentScanCtx ctx = null; 
+	public XmlParser(ComponentScanCtx ctx) {
 		this.ctx = ctx;
 	}
 
@@ -47,7 +46,7 @@ public class XmlParser extends DefaultHandler{
 	}
 
 	@Override
-	public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
+	public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException{
 		qName = qName.trim();
 		switch (qName) {
 		case "graphhandle":

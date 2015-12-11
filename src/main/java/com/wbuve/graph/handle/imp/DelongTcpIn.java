@@ -7,15 +7,13 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
 
 import com.google.common.base.Splitter;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import com.wbuve.graph.annotation.Component;
 import com.wbuve.graph.handle.TcpServerIn;
 
-@Scope("prototype")
 @Component("delongTcpIn")
 public class DelongTcpIn extends TcpServerIn{
 	private final Logger logger = Logger.getLogger(DelongTcpIn.class);

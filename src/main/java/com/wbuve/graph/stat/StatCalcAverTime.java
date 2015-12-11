@@ -1,11 +1,8 @@
 package com.wbuve.graph.stat;
 
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
-
+import com.wbuve.graph.annotation.Component;
 import com.wbuve.graph.model.CommitMsg;
 
-@Scope("prototype")
 @Component("statCalcAverTime")
 public class StatCalcAverTime extends AbstractStatCalc{
 	

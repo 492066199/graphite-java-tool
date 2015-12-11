@@ -5,17 +5,15 @@ import java.util.List;
 import java.util.Locale;
 
 import org.apache.log4j.Logger;
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
 
 import com.google.common.base.Splitter;
 import com.google.common.collect.Lists;
+import com.wbuve.graph.annotation.Component;
 import com.wbuve.graph.handle.AbstractHandle;
 import com.wbuve.graph.model.CommitMsg;
 import com.wbuve.graph.model.Msg;
 
 	
-@Scope("prototype")
 @Component("subreqHandle")
 public class SubreqHandle extends AbstractHandle{
 	private final SimpleDateFormat format = new SimpleDateFormat("dd/MMMMM/yyyy:HH:mm:ss z", Locale.ENGLISH);

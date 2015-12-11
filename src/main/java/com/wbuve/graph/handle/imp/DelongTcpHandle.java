@@ -3,16 +3,14 @@ package com.wbuve.graph.handle.imp;
 import java.util.List;
 
 import org.apache.log4j.Logger;
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
 
 import com.google.common.base.Splitter;
 import com.google.common.collect.Lists;
+import com.wbuve.graph.annotation.Component;
 import com.wbuve.graph.handle.AbstractHandle;
 import com.wbuve.graph.model.CommitMsg;
 import com.wbuve.graph.model.Msg;
 
-@Scope("prototype")
 @Component("delongTcpHandle")
 public class DelongTcpHandle extends AbstractHandle{
 	private final Logger logger = Logger.getLogger(DelongTcpHandle.class);

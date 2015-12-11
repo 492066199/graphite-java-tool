@@ -1,13 +1,15 @@
-package com.wbuve.graph.output;
+package com.wbuve.graph.handle.imp;
 
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
+import com.wbuve.graph.annotation.Component;
 import com.wbuve.graph.handle.IHandleOut;
 import com.wbuve.graph.model.CommitMsg;
 
+@Component("graphTarget")
 public class GraphTarget implements IHandleOut {
 	private Socket socket;
 	private OutputStream out;

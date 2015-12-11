@@ -6,13 +6,11 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.apache.log4j.Logger;
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
 
+import com.wbuve.graph.annotation.Component;
 import com.wbuve.graph.handle.FileHandleIn;
 import com.wbuve.graph.util.TimeUtil;
 
-@Scope("prototype")
 @Component("commonFileHandleIn")
 public class CommonFileHandleIn extends FileHandleIn{
 	private final Logger logger = Logger.getLogger(CommonFileHandleIn.class); 

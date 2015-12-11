@@ -14,9 +14,9 @@ import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
 import org.apache.log4j.Logger;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.xml.sax.SAXException;
 
+import com.wbuve.graph.annotation.ComponentScanCtx;
 import com.wbuve.graph.handle.IGraphHandle;
 import com.wbuve.graph.model.CommitMsg;
 import com.wbuve.graph.output.Output;
@@ -28,19 +28,17 @@ public class GraphHandleStart {
 	public static List<? extends IGraphHandle> handles = null;
 	public static final Map<String, IGraphHandle> maps = new HashMap<String, IGraphHandle>();
 	public static final TreeMap<Integer, IGraphHandle> treeMaps = new TreeMap<Integer, IGraphHandle>();
+	private final ComponentScanCtx ctx = new ComponentScanCtx();
 	public static int sumPriority = 0; 
 
 	public void init() throws ParserConfigurationException, SAXException, IOException{
         logger.info("begin init handle...");	
         InputStream input = this.getClass().getClassLoader().getResourceAsStream("handle.xml"); 
+        
         SAXParserFactory factory = SAXParserFactory.newInstance();
 		SAXParser parser = factory.newSAXParser();
-		
-		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
-	    ctx.scan("com.wbuve.graph.handle.imp");
-	    ctx.scan("com.wbuve.graph.stat");
-	    ctx.refresh();
-	    
+	    this.ctx.scan("com.wbuve.graph.handle.imp");
+	    this.ctx.scan("com.wbuve.graph.stat");
 		XmlParser parse = new XmlParser(ctx);
 		parser.parse(input, parse);
 		

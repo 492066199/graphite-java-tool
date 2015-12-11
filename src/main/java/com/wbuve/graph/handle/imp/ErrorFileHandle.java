@@ -7,14 +7,12 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.apache.log4j.Logger;
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
 
+import com.wbuve.graph.annotation.Component;
 import com.wbuve.graph.handle.AbstractHandle;
 import com.wbuve.graph.model.CommitMsg;
 import com.wbuve.graph.model.Msg;
 
-@Scope("prototype")
 @Component("errorFileHandle")
 public class ErrorFileHandle extends AbstractHandle{
 	private final Logger logger = Logger.getLogger(ErrorFileHandle.class);
