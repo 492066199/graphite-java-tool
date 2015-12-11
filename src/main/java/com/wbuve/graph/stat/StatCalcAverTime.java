@@ -43,7 +43,7 @@ public class StatCalcAverTime extends AbstractStatCalc{
 		super.setPostfix(postfix);
 		int index = postfix.indexOf(":");
 		this.postfixaver = postfix.substring(0, index);
-		this.postfixtotal = postfix.substring(index, postfix.length());
+		this.postfixtotal = postfix.substring(index + 1, postfix.length());
 		
 	}
 }

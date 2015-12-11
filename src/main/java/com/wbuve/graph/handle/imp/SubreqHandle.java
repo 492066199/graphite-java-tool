@@ -47,7 +47,7 @@ public class SubreqHandle extends AbstractHandle{
             target = info.get(2);
             end = target.length();
             int phpc = target.indexOf(".php");
-            if (phpc > 0){
+            if (phpc > 0 && phpc < end){
                 end = phpc;
             }
             target = target.substring(0, end);

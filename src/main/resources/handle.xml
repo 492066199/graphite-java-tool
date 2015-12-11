@@ -15,6 +15,20 @@
 		<out class="graphTarget">10.77.96.122:2003</out>
 		<count>100</count>
     </graphhandle>
+    <graphhandle id="2">
+		<in class="commonFileHandleIn">
+            <name>/data0/scribe_log/api.uve.mobile.sina.cn/access</name>
+			<priority>100</priority>
+		</in>
+		<handle class="accessFileHandle">
+			<stats index = "0">
+				<stat class="statCalcTotal"  prefix="test.uve_monitor" postfix="qps" >150</stat>
+				<stat class="statCalcAverTime"  prefix="test.uve_monitor" postfix="mean:total">150</stat>
+			</stats>
+		</handle>
+		<out class="graphTarget">10.77.96.122:2003</out>
+		<count>70</count>
+    </graphhandle>
     <!--	
     <graphhandle id="2">
 		<in class="delongTcpIn">
