@@ -2,7 +2,7 @@
 <graphhanles>
 	<graphhandle id="1">
 		<in class="commonFileHandleIn">
-			<name>/Users/yangyang/Documents/access</name>
+            <name>/data0/scribe_log/mobiletrends.mobile.sina.cn/access</name>
 			<priority>100</priority>
 		</in>
 		<handle class="accessFileHandle">
@@ -13,9 +13,9 @@
 			</stats>
 		</handle>
 		<out class="commonHandleOut">0</out>
-		<count>10</count>
-	</graphhandle>
-	<graphhandle id="2">
+		<count>100</count>
+    </graphhandle>
+    <!--	<graphhandle id="2">
 		<in class="delongTcpIn">
 			<name>127.0.0.1:33333</name>
 			<priority>100</priority>
@@ -41,5 +41,6 @@
 		</handle>
 		<out class="commonHandleOut">0</out>
 		<count>10</count>
-	</graphhandle>
+    </graphhandle>
+    -->
 </graphhanles>
