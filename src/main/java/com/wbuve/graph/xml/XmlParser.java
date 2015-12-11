@@ -71,6 +71,10 @@ public class XmlParser extends DefaultHandler{
 			if(prefix != null){
 				curStat.setPrefix(prefix);
 			}
+			String postfix = attributes.getValue("postfix");
+			if(postfix != null){
+				curStat.setPostfix(postfix);
+			}
 			break;
 		case "stats":
 			curStats = new StatListener();

@@ -94,6 +94,4 @@ public class CommonFileHandleIn extends FileHandleIn{
 		}
 		return nextFileName;
 	}
-
-
 }

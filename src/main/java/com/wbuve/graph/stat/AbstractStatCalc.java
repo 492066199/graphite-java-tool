@@ -4,7 +4,8 @@ import com.wbuve.graph.model.CommitMsg;
 
 public abstract class AbstractStatCalc implements IStatCalc{
 	private String prefix;
-
+	private String postfix;
+	
 	public String getPrefix() {
 		return prefix;
 	}
@@ -18,7 +19,21 @@ public abstract class AbstractStatCalc implements IStatCalc{
 	}
 	
 	public String preInitCount(CommitMsg msg) {
-		return getPrefix() + "." + msg.getTarget();
+		if(this.prefix == null){
+			prefix = "";
+		}
+		if(this.postfix == null){
+			postfix = "";
+		}
+		return getPrefix() + "." + msg.getTarget() + "." + postfix;
+	}
+
+	public String getPostfix() {
+		return postfix;
+	}
+
+	public void setPostfix(String postfix) {
+		this.postfix = postfix;
 	}
 
 }

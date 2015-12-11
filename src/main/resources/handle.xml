@@ -7,15 +7,16 @@
 		</in>
 		<handle class="accessFileHandle">
 			<stats index = "0">
-				<stat class="statCalcTotal"  prefix="uve_monitor.qps">1</stat>
-				<stat class="statCalcTotal"  prefix="uve_monitor.qps">3600</stat>
-				<stat class="statCalcAverTime"  prefix="uve_monitor.aver">1</stat>
+				<stat class="statCalcTotal"  prefix="test.uve_monitor" postfix="qps" >150</stat>
+				<stat class="statCalcTotal"  prefix="test.uve_monitor" postfix="qps">3600</stat>
+				<stat class="statCalcAverTime"  prefix="test.uve_monitor" postfix="aver">150</stat>
 			</stats>
 		</handle>
 		<out class="commonHandleOut">0</out>
 		<count>100</count>
     </graphhandle>
-    <!--	<graphhandle id="2">
+    <!--	
+    <graphhandle id="2">
 		<in class="delongTcpIn">
 			<name>127.0.0.1:33333</name>
 			<priority>100</priority>

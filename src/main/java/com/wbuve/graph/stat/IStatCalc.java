@@ -14,4 +14,6 @@ public interface IStatCalc {
 	public void preSendCount(CommitMsg curResult);
 	
 	public void setPrefix(String prefix);
+
+	public void setPostfix(String postfix);
 }
