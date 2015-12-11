@@ -132,14 +132,14 @@ public class ComponentScanCtx {
 
 	public Object getBean(String value) {
 		Class<?> c = maps.get(value);
-		Object o;
 		try {
+			Object o = c.newInstance();
 			o = Class.forName(c.getName());
 			return o;
-		} catch (ClassNotFoundException e) {
+		} catch (Exception e) {
 			logger.error("can't create object: " + value);
 			e.printStackTrace();
-		}
+		} 
 		return null;
 	}
 }
