@@ -34,6 +34,7 @@ public class ComponentScanCtx {
 	private void filterComponent(){
 		for(Class<?> clazz : clazzs){
 			Component c = clazz.getAnnotation(Component.class);
+		    System.out.println(clazz.getName() + "---->");
 			if(c != null){
 				maps.put(c.value(), clazz);
 				System.out.println(clazz.getName() + "---->" + c.value());
@@ -54,6 +55,7 @@ public class ComponentScanCtx {
                 }else if("jar".equals(protocol)){
                     JarFile jarFile = ((JarURLConnection) url.openConnection()).getJarFile(); 
                     getJarClass(jarFile, packageDirName);
+                    logger.info("create bean in package path:" + packageDirName);
                 }
             }
         } catch (Exception e) {
@@ -121,7 +123,7 @@ public class ComponentScanCtx {
 			}
 			className = className.substring(0, index);
 			try {
-				loader.loadClass(className);
+				clazzs.add(loader.loadClass(className));
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
