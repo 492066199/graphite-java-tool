@@ -60,9 +60,6 @@ public class SubreqHandle extends AbstractHandle{
 			cmg.setOutExt(t);
 			
 			return statListens.get(0).commit(cmg);
- 			// prefix "uve_monitor.subreq.qps" StatCalcTotal
- 			// prefix "uve_monitor.subreq.aver" StatCalcAverTime
-			//
 
 		}catch (Exception e){
             logger.info(tmp);
@@ -74,7 +71,6 @@ public class SubreqHandle extends AbstractHandle{
 
 	@Override
 	public void init() {
-		// TODO Auto-generated method stub
 		
 	}
 }
