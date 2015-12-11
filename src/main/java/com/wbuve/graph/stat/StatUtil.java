@@ -78,8 +78,13 @@ public class StatUtil implements IStatUtil{
 				CommitMsg curResult = curCommitMsgMap.get(i);
 				if(curResult != null){
 				
-					statCalc.preSendCount(curResult);
-					resultCM.add(curResult);
+					List<CommitMsg> cs = statCalc.preSendCount(curResult);
+					if(cs == null){
+						resultCM.add(curResult);
+					}else {
+						resultCM.addAll(cs);
+					}
+					
 					curCommitMsgMap.remove(i);
 				}
 			}

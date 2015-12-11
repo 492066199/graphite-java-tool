@@ -24,8 +24,8 @@ public class StatDelongTotal extends AbstractStatCalc{
 		curResult.setCount(curResult.getCount() + (Integer)Ext);
 	}
 
-	public void preSendCount(CommitMsg curResult) {
-
+	public List<CommitMsg> preSendCount(CommitMsg curResult) {
+		return null;
 	}
 
 	@Override

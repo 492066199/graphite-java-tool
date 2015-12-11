@@ -1,6 +1,6 @@
 package com.wbuve.graph.model;
 
-public class CommitMsg {
+public class CommitMsg implements Cloneable{
 	private String id;			 
 	private long time;		 
 	private String target;		 
@@ -59,5 +59,14 @@ public class CommitMsg {
 
 	public void setOutExt(Object outExt) {
 		this.outExt = outExt;
+	}
+	
+	public CommitMsg newCopy(){
+		try {
+			return (CommitMsg)super.clone();
+		} catch (CloneNotSupportedException e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 }

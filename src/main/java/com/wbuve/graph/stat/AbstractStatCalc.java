@@ -35,5 +35,4 @@ public abstract class AbstractStatCalc implements IStatCalc{
 	public void setPostfix(String postfix) {
 		this.postfix = postfix;
 	}
-
 }

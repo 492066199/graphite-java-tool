@@ -44,8 +44,9 @@ public class StatDelongAver extends AbstractStatCalc{
 	}
 
 	@Override
-	public void preSendCount(CommitMsg curResult) {
+	public List<CommitMsg> preSendCount(CommitMsg curResult) {
 		curResult.setCount(curResult.getCount() / curResult.getTotalNum());
+		return null;
 	}
 
 

@@ -1,6 +1,8 @@
 package com.wbuve.graph.stat;
 
 
+import java.util.List;
+
 import com.wbuve.graph.annotation.Component;
 import com.wbuve.graph.model.CommitMsg;
 
@@ -15,6 +17,7 @@ public class StatCalcTotal extends AbstractStatCalc{
 		curResult.setCount(curResult.getCount() + 1);
 	}
 
-	public void preSendCount(CommitMsg curResult) {
+	public List<CommitMsg> preSendCount(CommitMsg curResult) {
+		return null;
 	}
 }
