@@ -4,7 +4,10 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.util.List;
 
+import com.google.common.base.Splitter;
+import com.google.common.collect.Lists;
 import com.wbuve.graph.annotation.Component;
 import com.wbuve.graph.handle.IHandleOut;
 import com.wbuve.graph.model.CommitMsg;
@@ -13,20 +16,18 @@ import com.wbuve.graph.model.CommitMsg;
 public class GraphTarget implements IHandleOut {
 	private Socket socket;
 	private OutputStream out;
+	private String ip = null;
+	private int port = 0; 
 	
 	public void load() {
 		try {
-			this.socket = new Socket("10.77.96.122", 2003);
+			this.socket = new Socket(ip, port);
 	        this.out = socket.getOutputStream();  
 		} catch (UnknownHostException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-	}
-	
-	public GraphTarget() {
-		load();
 	}
 	
 	public boolean send(String string) {
@@ -47,19 +48,19 @@ public class GraphTarget implements IHandleOut {
 
 	@Override
 	public void init() {
-		// TODO Auto-generated method stub
-		
+		load();
 	}
 
 	@Override
 	public String CommitToString(CommitMsg cm) {
-		// TODO Auto-generated method stub
-		return null;
+		return cm.getTarget() + " " + cm.getCount() + " " + cm.getTime();
 	}
 
 	@Override
 	public void setOutFdname(String content) {
-		// TODO Auto-generated method stub
+		List<String> cs = Lists.newArrayList(Splitter.on(':').omitEmptyStrings().split(content));
+		this.ip = cs.get(0);
+		this.port = Integer.parseInt(cs.get(1));
 		
 	}
 }

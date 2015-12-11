@@ -12,7 +12,7 @@
 				<stat class="statCalcAverTime"  prefix="test.uve_monitor" postfix="aver">150</stat>
 			</stats>
 		</handle>
-		<out class="commonHandleOut">0</out>
+		<out class="graphTarget">10.77.96.122:2003</out>
 		<count>100</count>
     </graphhandle>
     <!--	

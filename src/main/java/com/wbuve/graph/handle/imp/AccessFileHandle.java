@@ -18,8 +18,8 @@ public class AccessFileHandle extends AbstractHandle{
 	private final SimpleDateFormat format = new SimpleDateFormat("dd/MMMMM/yyyy:HH:mm:ss z", Locale.ENGLISH);
 	private final Logger logger = Logger.getLogger(AccessFileHandle.class);
 	
-	public List<CommitMsg> handle(Msg m) {
-		String tmp = m.getMsg();
+	public List<CommitMsg> handle(Msg msg) {
+		String tmp = msg.getMsg();
 		long time = 0;
 		Double t = null;
 		String target = "";
@@ -47,7 +47,7 @@ public class AccessFileHandle extends AbstractHandle{
 			}
 			target = target.substring(start, end);
 			target = target.replace('/', '.');
-			CommitMsg cm  = new CommitMsg(m.getId());
+			CommitMsg cm  = new CommitMsg(msg.getId());
 			
 			cm.setTarget(target);
 			cm.setTime(time / 1000);
