@@ -16,6 +16,7 @@ import com.wbuve.graph.handle.IHandleOut;
 import com.wbuve.graph.model.Msg;
 import com.wbuve.graph.stat.IStatCalc;
 import com.wbuve.graph.stat.IStatUtil;
+import com.wbuve.graph.stat.StatCenter;
 import com.wbuve.graph.stat.StatListener;
 import com.wbuve.graph.stat.StatUtil;
 
@@ -79,7 +80,7 @@ public class XmlParser extends DefaultHandler{
 		case "stats":
 			curStats = new StatListener();
 			Integer index  = Integer.parseInt(attributes.getValue("index"));
-			handle.getHandle().addStat(index, curStats);
+			StatCenter.INSTANCE.set(index, curStats);
 			break;
 		default:
 			break;
@@ -130,6 +131,10 @@ public class XmlParser extends DefaultHandler{
 				break;
 			case "count":
 				handle.setMsgQueue(new LinkedBlockingQueue<Msg>(Integer.parseInt(content)));
+				break;
+			case "statIndex":
+				IHandle iHandle = handle.getHandle();
+				iHandle.addStat(content);
 				break;
 			default:
 				break;

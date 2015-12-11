@@ -1,16 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <graphhanles>
+	<statsmap>
+		<stats index = "0">
+			<stat class="statCalcTotal"  prefix="test.uve_monitor.access" postfix="qps" >150</stat>
+			<stat class="statCalcTotal"  prefix="test.uve_monitor.access" postfix="qps">3600</stat>
+			<stat class="statCalcAverTime"  prefix="test.uve_monitor.access" postfix="mean:total">150</stat>
+		</stats>
+		<stats index = "1">
+			<stat class="statCalcTotal"  prefix="test.uve_monitor.subreq" postfix="qps" >150</stat>
+			<stat class="statCalcAverTime"  prefix="test.uve_monitor.subreq" postfix="mean:total">150</stat>
+		</stats>
+	</statsmap>
 	<graphhandle id="1">
 		<in class="commonFileHandleIn">
             <name>/data0/scribe_log/mobiletrends.mobile.sina.cn/access</name>
 			<priority>100</priority>
 		</in>
 		<handle class="accessFileHandle">
-			<stats index = "0">
-				<stat class="statCalcTotal"  prefix="test.uve_monitor.access" postfix="qps" >150</stat>
-				<stat class="statCalcTotal"  prefix="test.uve_monitor.access" postfix="qps">3600</stat>
-				<stat class="statCalcAverTime"  prefix="test.uve_monitor.access" postfix="mean:total">150</stat>
-			</stats>
+			<statIndex>0</statIndex>
 		</handle>
 		<out class="graphTarget">10.77.96.122:2003</out>
 		<count>100</count>
@@ -21,10 +28,7 @@
 			<priority>70</priority>
 		</in>
 		<handle class="accessFileHandle">
-			<stats index = "0">
-				<stat class="statCalcTotal"  prefix="test.uve_monitor.access" postfix="qps" >150</stat>
-				<stat class="statCalcAverTime"  prefix="test.uve_monitor.access" postfix="mean:total">150</stat>
-			</stats>
+			<statIndex>0</statIndex>
 		</handle>
 		<out class="graphTarget">10.77.96.122:2003</out>
 		<count>70</count>
@@ -35,10 +39,7 @@
 			<priority>60</priority>
 		</in>
 		<handle class="subreqHandle">
-			<stats index = "0">
-				<stat class="statCalcTotal"  prefix="test.uve_monitor.subreq" postfix="qps" >150</stat>
-				<stat class="statCalcAverTime"  prefix="test.uve_monitor.subreq" postfix="mean:total">150</stat>
-			</stats>
+			<statIndex>1</statIndex>
 		</handle>
 		<out class="graphTarget">10.77.96.122:2003</out>
 		<count>60</count>

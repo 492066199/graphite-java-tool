@@ -12,6 +12,7 @@ import com.wbuve.graph.annotation.Component;
 import com.wbuve.graph.handle.AbstractHandle;
 import com.wbuve.graph.model.CommitMsg;
 import com.wbuve.graph.model.Msg;
+import com.wbuve.graph.stat.StatListener;
 
 @Component("accessFileHandle")
 public class AccessFileHandle extends AbstractHandle{
@@ -53,7 +54,11 @@ public class AccessFileHandle extends AbstractHandle{
 			cm.setTime(time / 1000);
 			cm.setOutExt(t);
 			 
-			List<CommitMsg> result = statListens.get(0).commit(cm);
+			List<CommitMsg> result = Lists.newArrayList();
+			for(StatListener s : statListens){
+				result.addAll(s.commit(cm));
+			}
+
 			return result;
 		} catch (Exception e) {
             logger.info("error access log:" + tmp);
