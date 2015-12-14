@@ -19,13 +19,19 @@ public abstract class AbstractStatCalc implements IStatCalc{
 	}
 	
 	public String preInitCount(CommitMsg msg) {
+		String tmp = msg.getTarget();
 		if(this.prefix == null){
 			prefix = "";
+		}else {
+			tmp = getPrefix() + "." + msg.getTarget();
 		}
+		
 		if(this.postfix == null){
 			postfix = "";
+		}else {
+			tmp = msg.getTarget() + "." + postfix;
 		}
-		return getPrefix() + "." + msg.getTarget() + "." + postfix;
+		return  tmp;
 	}
 
 	public String getPostfix() {

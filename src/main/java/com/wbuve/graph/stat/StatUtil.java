@@ -32,6 +32,7 @@ public class StatUtil implements IStatUtil{
 		String id = msg.getId();
 		long time = msg.getTime();
 		Object Ext = msg.getOutExt();
+		//never use msg below!!!
 		
 		Map<Long, CommitMsg> curCommitMsgMap = curResultMap.get(target);
 		if(curCommitMsgMap == null){    

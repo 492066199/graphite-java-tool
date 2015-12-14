@@ -25,7 +25,7 @@ public class DelongTcpHandle extends AbstractHandle{
 				CommitMsg cm  = new CommitMsg(m.getId());
 				cm.setTarget(target);
 				cm.setOutExt(info);
-				return statListens.get(0).commit(cm);
+				return Lists.newArrayList(cm);
 				
 			}
 			

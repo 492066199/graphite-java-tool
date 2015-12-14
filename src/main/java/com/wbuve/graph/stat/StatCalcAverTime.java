@@ -10,6 +10,7 @@ import com.wbuve.graph.model.CommitMsg;
 public class StatCalcAverTime extends AbstractStatCalc{
 	private String postfixaver;
 	private String postfixtotal;
+	
 	public String preInitCount(CommitMsg msg) {
 		return getPrefix() + "." + msg.getTarget();
 	}

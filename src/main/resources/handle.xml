@@ -10,6 +10,10 @@
 			<stat class="statCalcTotal"  prefix="test.uve_monitor.subreq" postfix="qps" >600</stat>
 			<stat class="statCalcAverTime"  prefix="test.uve_monitor.subreq" postfix="mean:total">600</stat>
 		</stats>
+		<stats index = "2">
+			<stat class="statDelongTotal"  prefix="" postfix="qps" >150</stat>
+			<stat class="statDelongAver"  prefix="" postfix="mean:total">150</stat>
+		</stats>
 	</statsmap>
 	<graphhandle id="1">
 		<in class="commonFileHandleIn">
@@ -55,33 +59,15 @@
 		<out class="graphTarget">10.77.96.122:2003</out>
 		<count>90</count>
     </graphhandle>
-    <!--	
-    <graphhandle id="2">
+    <graphhandle id="5">
 		<in class="delongTcpIn">
-			<name>127.0.0.1:33333</name>
-			<priority>100</priority>
+			<name>10.77.96.122:33333</name>
+			<priority>70</priority>
 		</in>
 		<handle class="delongTcpHandle">
-			<stats index = "0">
-				<stat class="statDelongTotal">1</stat>
-				<stat class="statDelongAver">1</stat>
-			</stats>
+			<statIndex>2</statIndex>
 		</handle>
-		<out class="commonHandleOut">0</out>
-		<count>10</count>
+		<out class="graphTarget">10.77.96.122:2003</out>
+		<count>50</count>
 	</graphhandle>
-	<graphhandle id="3">
-		<in class="commonFileHandleIn">
-			<name>/Users/yangyang/Documents/error</name>
-			<priority>100</priority>
-		</in>
-		<handle class="errorFileHandle">
-			<stats index = "0">
-				<stat class="statCalcTotal"  prefix="uve_monitor.error">1</stat>
-			</stats>
-		</handle>
-		<out class="commonHandleOut">0</out>
-		<count>10</count>
-    </graphhandle>
-    -->
 </graphhanles>

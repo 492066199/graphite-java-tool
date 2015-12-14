@@ -1,7 +1,13 @@
 package com.wbuve.graph.xml;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 import java.util.concurrent.LinkedBlockingQueue;
+
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
 
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
@@ -140,5 +146,22 @@ public class XmlParser extends DefaultHandler{
 				break;
 			}
 		}
+	}
+	
+	public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {
+		final ComponentScanCtx ctx = new ComponentScanCtx();
+	
+        InputStream input = XmlParser.class.getClassLoader().getResourceAsStream("handle.xml"); 
+        
+        SAXParserFactory factory = SAXParserFactory.newInstance();
+		SAXParser parser = factory.newSAXParser();
+	    ctx.scan("com.wbuve.graph.handle.imp");
+	    ctx.scan("com.wbuve.graph.stat");
+		XmlParser parse = new XmlParser(ctx);
+		parser.parse(input, parse);
+		
+		StatListener s1 = StatCenter.INSTANCE.get(0);
+		StatListener s2 = StatCenter.INSTANCE.get(1);
+		parse.getHandles();
 	}
 }
