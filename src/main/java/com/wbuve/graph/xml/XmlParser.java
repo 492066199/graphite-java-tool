@@ -147,21 +147,4 @@ public class XmlParser extends DefaultHandler{
 			}
 		}
 	}
-	
-	public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {
-		final ComponentScanCtx ctx = new ComponentScanCtx();
-	
-        InputStream input = XmlParser.class.getClassLoader().getResourceAsStream("handle.xml"); 
-        
-        SAXParserFactory factory = SAXParserFactory.newInstance();
-		SAXParser parser = factory.newSAXParser();
-	    ctx.scan("com.wbuve.graph.handle.imp");
-	    ctx.scan("com.wbuve.graph.stat");
-		XmlParser parse = new XmlParser(ctx);
-		parser.parse(input, parse);
-		
-		StatListener s1 = StatCenter.INSTANCE.get(0);
-		StatListener s2 = StatCenter.INSTANCE.get(1);
-		parse.getHandles();
-	}
 }
