@@ -14,7 +14,7 @@
 	<graphhandle id="1">
 		<in class="commonFileHandleIn">
             <name>/data0/scribe_log/mobiletrends.mobile.sina.cn/access</name>
-			<priority>100</priority>
+			<priority>120</priority>
 		</in>
 		<handle class="accessFileHandle">
 			<statIndex>0</statIndex>
@@ -25,13 +25,13 @@
     <graphhandle id="2">
 		<in class="commonFileHandleIn">
             <name>/data0/scribe_log/api.uve.mobile.sina.cn/access</name>
-			<priority>70</priority>
+			<priority>100</priority>
 		</in>
 		<handle class="accessFileHandle">
 			<statIndex>0</statIndex>
 		</handle>
 		<out class="graphTarget">10.77.96.122:2003</out>
-		<count>70</count>
+		<count>100</count>
     </graphhandle>
     <graphhandle id="3">
 		<in class="commonFileHandleIn">
@@ -43,6 +43,17 @@
 		</handle>
 		<out class="graphTarget">10.77.96.122:2003</out>
 		<count>60</count>
+    </graphhandle>
+    <graphhandle id="4">
+		<in class="commonFileHandleIn">
+            <name>/data0/scribe_log/api.uve.mobile.sina.cn/subreq</name>
+			<priority>90</priority>
+		</in>
+		<handle class="subreqHandle">
+			<statIndex>1</statIndex>
+		</handle>
+		<out class="graphTarget">10.77.96.122:2003</out>
+		<count>90</count>
     </graphhandle>
     <!--	
     <graphhandle id="2">
