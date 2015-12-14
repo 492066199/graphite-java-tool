@@ -17,4 +17,9 @@ public abstract class AbstractHandle implements IHandle{
 			this.statListens.add(StatCenter.INSTANCE.get(Integer.parseInt(s)));
 		}
 	}
+	
+	@Override
+	public List<StatListener> getStatListens() {
+		return this.statListens;
+	}
 }

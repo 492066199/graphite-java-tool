@@ -12,7 +12,6 @@ import com.wbuve.graph.annotation.Component;
 import com.wbuve.graph.handle.AbstractHandle;
 import com.wbuve.graph.model.CommitMsg;
 import com.wbuve.graph.model.Msg;
-import com.wbuve.graph.stat.StatListener;
 
 	
 @Component("subreqHandle")
@@ -59,13 +58,8 @@ public class SubreqHandle extends AbstractHandle{
 			cmg.setTarget(target);
 			cmg.setTime(time / 1000);
 			cmg.setOutExt(t);
-			
-			List<CommitMsg> result = Lists.newArrayList();
-			for(StatListener s : statListens){
-				result.addAll(s.commit(cmg));
-			}
 
-			return result;			
+			return Lists.newArrayList(cmg);			
 		}catch (Exception e){
             logger.info(tmp);
             e.printStackTrace();
