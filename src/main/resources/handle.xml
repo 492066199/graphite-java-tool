@@ -7,8 +7,8 @@
 			<stat class="statCalcAverTime"  prefix="test.uve_monitor.access" postfix="mean:total">150</stat>
 		</stats>
 		<stats index = "1">
-			<stat class="statCalcTotal"  prefix="test.uve_monitor.subreq" postfix="qps" >150</stat>
-			<stat class="statCalcAverTime"  prefix="test.uve_monitor.subreq" postfix="mean:total">150</stat>
+			<stat class="statCalcTotal"  prefix="test.uve_monitor.subreq" postfix="qps" >600</stat>
+			<stat class="statCalcAverTime"  prefix="test.uve_monitor.subreq" postfix="mean:total">600</stat>
 		</stats>
 	</statsmap>
 	<graphhandle id="1">
