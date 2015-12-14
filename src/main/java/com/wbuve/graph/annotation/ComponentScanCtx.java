@@ -34,10 +34,8 @@ public class ComponentScanCtx {
 	private void filterComponent(){
 		for(Class<?> clazz : clazzs){
 			Component c = clazz.getAnnotation(Component.class);
-		    System.out.println(clazz.getName() + "---->");
 			if(c != null){
 				maps.put(c.value(), clazz);
-				System.out.println(clazz.getName() + "---->" + c.value());
 			}
 		}
 	}   

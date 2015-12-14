@@ -2,16 +2,16 @@
 <graphhanles>
 	<statsmap>
 		<stats index = "0">
-			<stat class="statCalcTotal"  prefix="test.uve_monitor.access" postfix="qps" >150</stat>
-			<stat class="statCalcTotal"  prefix="test.uve_monitor.access" postfix="qps">3600</stat>
-			<stat class="statCalcAverTime"  prefix="test.uve_monitor.access" postfix="mean:total">150</stat>
+			<stat class="statCalcTotal"  prefix="uve_monitor.access" postfix="qps" >150</stat>
+			<stat class="statCalcTotal"  prefix="uve_monitor.access" postfix="qps">3600</stat>
+			<stat class="statCalcAverTime"  prefix="uve_monitor.access" postfix="mean:total">150</stat>
 		</stats>
 		<stats index = "1">
-			<stat class="statCalcTotal"  prefix="test.uve_monitor.subreq" postfix="qps" >600</stat>
-			<stat class="statCalcAverTime"  prefix="test.uve_monitor.subreq" postfix="mean:total">600</stat>
+			<stat class="statCalcTotal"  prefix="uve_monitor.subreq" postfix="qps" >600</stat>
+			<stat class="statCalcAverTime"  prefix="uve_monitor.subreq" postfix="mean:total">600</stat>
 		</stats>
 		<stats index = "2">
-			<stat class="statDelongTotal"  prefix="" postfix="qps" >150</stat>
+			<stat class="statDelongTotal"  prefix="" >150</stat>
 			<stat class="statDelongAver"  prefix="" postfix="mean:total">150</stat>
 		</stats>
 	</statsmap>
