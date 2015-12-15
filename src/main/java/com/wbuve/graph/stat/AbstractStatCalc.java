@@ -23,13 +23,19 @@ public abstract class AbstractStatCalc implements IStatCalc{
 		if(this.prefix == null){
 			prefix = "";
 		}else {
-			tmp = getPrefix() + "." + msg.getTarget();
+			tmp = getPrefix() + "." + tmp;
 		}
 		
 		if(this.postfix == null){
 			postfix = "";
 		}else {
-			tmp = msg.getTarget() + "." + postfix;
+			tmp = tmp + "." + postfix;
+		}
+		
+		if(tmp.charAt(0) == '.'){
+			System.out.println("##########" + tmp);
+			System.out.println("##########" + prefix);
+			System.out.println("##########" + postfix);
 		}
 		return  tmp;
 	}
